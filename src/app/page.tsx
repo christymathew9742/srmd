@@ -7,12 +7,12 @@ const sections: string[] = ["Section 1", "Section 2", "Section 3", "Section 4"];
 
 export default function Home() {
   const controls = useAnimation();
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]); // Type for the ref array
-  const [activeIndex, setActiveIndex] = useState<number>(0); // Type for activeIndex
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]); 
+  const [activeIndex, setActiveIndex] = useState<number>(0); 
 
   useEffect(() => {
     const handleScroll = () => {
-      const topOffsets = sectionRefs.current.map((ref) => ref?.offsetTop || 0); // Ensure that the ref is not null
+      const topOffsets = sectionRefs.current.map((ref) => ref?.offsetTop || 0);
       const scrollPosition = window.scrollY + 100;
       const currentIndex = topOffsets.findIndex((offset, i) =>
         scrollPosition >= offset && (topOffsets[i + 1] ? scrollPosition < topOffsets[i + 1] : true)
@@ -25,12 +25,12 @@ export default function Home() {
   }, []);
 
   const scrollToSection = (index: number) => {
-    sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" }); // Ensure the ref is not null
+    sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="relative w-full h-screen">
-      {/* Floating Menu */}
+
       <div className="fixed top-4 left-1/2 -translate-x-1/2 flex space-x-4 bg-white p-2 shadow-lg rounded-full z-50">
         {sections.map((section, index) => (
           <button
@@ -43,7 +43,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Sections */}
       <div>
         {sections.map((section, index) => (
           <motion.div
