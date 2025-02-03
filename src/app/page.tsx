@@ -5,6 +5,8 @@ import { useAnimation } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { PopOverSection } from "@/sections/PopOverSection";
 import { sections } from "@/utils/sections";
+import Carousel from "@/components/Slider/Slider";
+import { Hero } from "@/sections/Hero";
 
 //const sections: string[] = ["Section 1", "Section 2", "Section 3", "Section 4"];
 
@@ -34,6 +36,7 @@ export default function Home() {
         sectionRefs={sectionRefs}
         activeIndex={activeIndex}
       />
+      <Hero/>
       <PopOverSection 
         sections={sections}
         sectionRefs={sectionRefs}
