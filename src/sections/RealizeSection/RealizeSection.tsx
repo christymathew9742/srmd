@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import { MutableRefObject } from "react";
 
-
 const ReyalizeSection = (props: {sectionRefs: MutableRefObject<any[]>; index: number }) => {
   const {sectionRefs, index } = props;
-
   return (
     <div
       ref={(el:any) => (sectionRefs.current[index] = el)}
