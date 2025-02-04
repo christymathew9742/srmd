@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 
 const NavBar = (props:any) => {
   const {sections,sectionRefs,activeIndex} = props
@@ -5,7 +8,12 @@ const NavBar = (props:any) => {
     sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 flex flex-wrap justify-center items-center space-x-2 sm:space-x-4 bg-white p-2 shadow-lg rounded-full z-50 w-[90%] sm:w-auto">
+    <motion.div 
+      className="fixed top-6 left-[10%] right-[10%] w-full justify-center  -translate-x-1/2 flex flex-wrap  items-center space-x-2 sm:space-x-4 bg-white p-2 shadow-lg rounded-full z-50 sm:w-auto"
+      initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.8, ease: "easeOut" }}
+    >
       {sections.map((section: any, index: number) => (
         <span
           key={index}
@@ -17,7 +25,7 @@ const NavBar = (props:any) => {
           {section}
         </span>
       ))}
-    </div>
+    </motion.div>
 
   );
 };

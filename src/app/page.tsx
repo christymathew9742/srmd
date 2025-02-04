@@ -1,19 +1,26 @@
 "use client";
 
+import dynamic from "next/dynamic";
+const Sections = dynamic(
+  () => import("@/sections/Sections"),
+  { ssr: false }
+);
+const NavBar = dynamic(
+  () => import("@/components/NavBar/NavBar"),
+  { ssr: false }
+);
+const ReayalizeSection = dynamic(
+  () => import("@/sections/RealizeSection/RealizeSection"),
+  { ssr: false }
+);
 import { useState, useEffect, useRef } from "react";
-import { useAnimation } from "framer-motion";
-import { NavBar } from "@/components/NavBar";
-import { PopOverSection } from "@/sections/PopOverSection";
 import { sections } from "@/utils/sections";
-import Carousel from "@/components/Slider/Slider";
 import { Hero } from "@/sections/Hero";
 
-//const sections: string[] = ["Section 1", "Section 2", "Section 3", "Section 4"];
-
 export default function Home() {
-  const controls = useAnimation();
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]); 
-  const [activeIndex, setActiveIndex] = useState<number>(0); 
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [isHeroVisible, setIsHeroVisible] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +30,13 @@ export default function Home() {
         scrollPosition >= offset && (topOffsets[i + 1] ? scrollPosition < topOffsets[i + 1] : true)
       );
       if (currentIndex !== -1) setActiveIndex(currentIndex);
+      const heroSectionHeight = sectionRefs.current[0]?.offsetHeight || 0;
+      const scrollProgress = (scrollPosition / heroSectionHeight) * 100;
+      if (scrollProgress >= 70) {
+        setIsHeroVisible(false);
+      } else {
+        setIsHeroVisible(true);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,21 +44,30 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen">
-      <NavBar 
+    <div className="relative font-sans w-full h-full flex flex-col mx-auto md:justify-center xl:max-w-[1508px] bg-baseTheme">
+      <Hero />
+      {!isHeroVisible && (
+          <NavBar
+            sections={sections}
+            sectionRefs={sectionRefs}
+            activeIndex={activeIndex}
+          />
+      )}
+      <Sections 
         sections={sections}
         sectionRefs={sectionRefs}
         activeIndex={activeIndex}
       />
-      <Hero/>
-      <PopOverSection 
+      {/* <PopOverSection
         sections={sections}
         sectionRefs={sectionRefs}
         activeIndex={activeIndex}
-      />
+      /> */}
     </div>
   );
 }
+
+
 
 
 

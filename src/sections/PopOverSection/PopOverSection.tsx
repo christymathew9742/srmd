@@ -28,7 +28,7 @@ const PopOverSection = (props: { sections: string[]; sectionRefs: MutableRefObje
           <div className="w-full flex justify-center overflow-hidden">
             <div className={`flex w-[80%] ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
               <motion.div
-                className="w-[40%] h-auto rounded-lg shadow-lg bg-[#c66a10] p-4"
+                className="w-[40%] h-auto rounded-lg shadow-lg bg-baseColor p-4"
                 initial={{ x: index % 2 === 0 ? "-100%" : "100%", opacity: 0 }}
                 animate={activeIndex === index ? { x: 0, y: 0, opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}

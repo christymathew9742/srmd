@@ -18,6 +18,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'baseTheme':'#ece9de',
+        'baseColor': '#c66a10',
       },
       fontSize: {
         'xxxs':'0.5rem', //8px

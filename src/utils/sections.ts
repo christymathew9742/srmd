@@ -1,2 +1,2 @@
 // sections.ts
-export   const sections:string[] = ["Section 1", "Section 2", "Section 3", "Section 4"];
+export   const sections:string[] = ["Realize", "Gallery", "Section 3", "Section 4, "];

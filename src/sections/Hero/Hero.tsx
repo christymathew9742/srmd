@@ -46,7 +46,7 @@ const Hero = () => {
         style={{ right:'4rem', top:'30%'}}
       >
         <div className="space-y-2 font-sans">
-          <h1 className=" text-4xl font-normal leading-tight text-[#efede7]">
+          <h1 className="text-5xl font-normal leading-tight text-[#efede7]">
             {content.heading}
           </h1>
           <div className="ftext-sm sm:text-base leading-6 tracking-[0.5px] text-[#efede7] mt-4">
