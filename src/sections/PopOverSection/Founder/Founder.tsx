@@ -7,7 +7,6 @@ const Founder = (props: { sectionRefs: MutableRefObject<any[]>; index: number, a
   const { sectionRefs, index, activeIndex } = props;
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 0.5], ['-100%', '0%']);
-
   return (
     <>
       <motion.div
