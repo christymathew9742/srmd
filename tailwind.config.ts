@@ -18,7 +18,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'baseTheme':'#ece9de',
+        'baseTheme':'rgb(200 191 159)',
         'baseColor': '#c66a10',
       },
       fontSize: {
@@ -35,6 +35,10 @@ export default {
         '4xl': '2.25rem', // 36px
         '5xl': '3rem', // 48px
         '6xl': '4rem', // 64px
+      },
+      fontFamily: {
+        slick: 'slick',
+        math: 'math',
       },
     },
   },

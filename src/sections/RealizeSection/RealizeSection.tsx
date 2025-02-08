@@ -8,7 +8,7 @@ const ReyalizeSection = (props: {sectionRefs: MutableRefObject<any[]>; index: nu
   return (
     <div
       ref={(el:any) => (sectionRefs.current[index] = el)}
-      className="h-screen w-full flex items-center justify-center bg-baseTheme -mt-2"
+      className="h-screen w-full flex items-center justify-center -mt-2"
     >
       <motion.h1 
         className="font-sans font-bold text-6xl leading-tight text-baseColor"

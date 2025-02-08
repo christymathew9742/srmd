@@ -9,10 +9,7 @@ const NavBar = dynamic(
   () => import("@/components/NavBar/NavBar"),
   { ssr: false }
 );
-const ReayalizeSection = dynamic(
-  () => import("@/sections/RealizeSection/RealizeSection"),
-  { ssr: false }
-);
+
 import { useState, useEffect, useRef } from "react";
 import { sections } from "@/utils/sections";
 import { Hero } from "@/sections/Hero";
@@ -44,7 +41,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative font-sans w-full h-full flex flex-col mx-auto md:justify-center xl:max-w-[1508px] bg-baseTheme">
+    <div className="relative font-sans w-full h-auto flex flex-col mx-auto md:justify-center xl:max-w-[1508px] bg-[url('/bgTheme.jpeg')] overflow-x-hidden">
       <Hero />
       {!isHeroVisible && (
           <NavBar
@@ -58,11 +55,6 @@ export default function Home() {
         sectionRefs={sectionRefs}
         activeIndex={activeIndex}
       />
-      {/* <PopOverSection
-        sections={sections}
-        sectionRefs={sectionRefs}
-        activeIndex={activeIndex}
-      /> */}
     </div>
   );
 }

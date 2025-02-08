@@ -1,3 +1,2 @@
-import PopOverSection from "./PopOverSection";
-
-export { PopOverSection };
+export * from "./Inspiration";
+export * from "./Founder";
