@@ -5,7 +5,6 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { MutableRefObject } from "react";
 
-
 const Thankz = ({ sectionRefs, index }: { sectionRefs: MutableRefObject<any[]>; index: number }) => {
   const content = {
     heading: "May the Grace of Enlightened Ones uplift the world! ",
