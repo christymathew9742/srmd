@@ -20,7 +20,7 @@ const NavBar = (props:any) => {
         <motion.span
           key={index}
           onClick={() => scrollToSection(index)}
-          className={`font-sans cursor-pointer text-[14px] font-medium text-gray-800 ${
+          className={`font-sans cursor-pointer text-xs font-medium text-gray-800 ${
             activeIndex === index ? "!font-extrabold !text-baseColor" : ""
           }`}
           

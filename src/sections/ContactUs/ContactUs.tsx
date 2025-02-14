@@ -16,7 +16,7 @@ const ContactUs = (props: { sectionRefs: MutableRefObject<any[]>; index: number,
 
   return (
     <div 
-      className="relative w-full h-auto flex items-center justify-center bg-cover bg-no-repeat mt-2"
+      className="relative w-full h-auto flex items-center justify-center bg-cover bg-no-repeat"
       key={index}
       ref={(el:any) => (sectionRefs.current[index] = el)}
     >

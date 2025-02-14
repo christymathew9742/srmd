@@ -20,6 +20,7 @@ export default {
         foreground: "var(--foreground)",
         'baseTheme':'rgb(200 191 159)',
         'baseColor': '#c66a10',
+        'baseLight' : 'rgb(252 150 51)',
       },
       fontSize: {
         'xxxs':'0.5rem', //8px

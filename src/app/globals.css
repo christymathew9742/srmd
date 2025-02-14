@@ -20,3 +20,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
+.news-slider .slick-slide:not(.slick-active) .news-sl {
+   margin-top: 3rem!important;
+}
+
+
+
+
